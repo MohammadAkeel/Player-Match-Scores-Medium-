@@ -123,7 +123,7 @@ app.get('/players/:playerId/playerScores', async (request, response) => {
     player_details.player_id = player_match_score.player_id
     WHERE player_details.player_id = ${playerId};
     `
-  const ans = await db.all(getPlayerScored)
+  const ans = await db.get(getPlayerScored)
   response.send(ans)
 })
 
